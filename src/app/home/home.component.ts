@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { DialogComponent } from '../dialog/dialog.component';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { DataServiceService } from '../data-service.service';
 
 
 
@@ -17,14 +18,12 @@ interface itemInterface{
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
-
  
 isAddMode: any;
 count: any;
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog , private api : DataServiceService) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent);
@@ -40,12 +39,17 @@ count: any;
   idx: any;
 options: any;
 
+
 ngOnInit() {
+
+  
   localStorage.setItem('myCat', 'Tom2');
   console.log(localStorage.getItem("myCat"));
-  
+  }
 
-  }  triggerResize() {
+  // getAllTask().subscribe()
+
+    triggerResize() {
     throw new Error('Method not implemented.');
   }
 
@@ -61,6 +65,7 @@ ngOnInit() {
   default_icon1:string ="radio_button_checked";
   default_text1:string= "Second Task";
   default_color1:string = "black";
+  default_fontsize:string="bold"
 
   menuitem_array: any = [
     {
@@ -110,7 +115,6 @@ ngOnInit() {
       color: 'green',
     },
   ];
-
 
   menuitem_array1: any = [
     {

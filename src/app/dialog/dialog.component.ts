@@ -2,7 +2,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { NgZone, ViewChild } from '@angular/core';
@@ -21,7 +20,6 @@ const year = today.getFullYear();
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
-
   styleUrls: ['./dialog.component.css'],
 })
 export class DialogComponent {

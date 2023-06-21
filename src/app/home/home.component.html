@@ -1,4 +1,4 @@
-<div>
+<div  >
 <link
 
 
@@ -27,7 +27,7 @@
       <mat-divider></mat-divider>
       <div class="starr">
         <mat-icon style="margin-top: -3px;">star_border</mat-icon>Design<span style="margin-left: 100px"
-          >Feb 1=>Feb5</span
+          >Feb 1=>  Feb5</span
         >
       </div>
     </div>
@@ -79,12 +79,11 @@
 
 <mat-menu #menu="matMenu" yPosition="above" >
 
-<button mat-menu-item *ngFor="let item of menuitem_array" value="item" >  <p (click)="passItems(item)"  > <mat-icon [style.color]="item.color"
->{{item.icon}}</mat-icon>{{item.text}}</p>
-
+<button mat-menu-item *ngFor="let item of menuitem_array" value="item">  <p (click)="passItems(item)"> <mat-icon [style.color]="item.color"
+>{{item.icon}}</mat-icon>{{item.text}} </p>
 </button>                    
 </mat-menu>
-  <hr />
+  <hr>
   </div>
   </button>
   </mat-icon>
@@ -111,19 +110,11 @@
                   
 </mat-menu>
 
-<cdk-virtual-scroll-viewport
-                  appendOnly
-                  itemSize="50"
-                  class="example-viewport"
-                >
+<cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
                   <div class="cont">
                   </div>
-                 
-                  
                 </cdk-virtual-scroll-viewport>
-
-                <hr />
-              
+                <hr/>
             </div>
           </button>
         </mat-icon>
@@ -139,13 +130,7 @@
     <div class="item3">
       <mat-divider></mat-divider>
     </div>
-
-
-
-
-   
- 
   </mat-selection-list>
-  
 </mat-card>
 
+</div>

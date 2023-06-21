@@ -1,5 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
-
 <mat-card class="cont">
   <mat-card class="list">
     <div class="design" style="margin-top: 20px">
@@ -16,53 +14,57 @@
         style="margin-left: -15px; color: white"
       >
         JW
-        <mat-menu #menu="matMenu">
-          <mat-card class="inner-name">
-            <p>JW</p>
-          </mat-card>
-          <h3 style="margin-left: 50px; margin-top: -30px">James Wachira</h3>
-          <hr />
-          <button mat-menu-item>
-            <mat-icon>person</mat-icon>
-            <span>Profile</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-          </button>
-          <button mat-menu-item>
-            <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-            <mat-icon>key</mat-icon>
-            <span>Change Password</span>
-          </button>
-          <hr />
-          <button mat-menu-item>Mode</button>
-          <table>
-            <tr>
-              <button>
-                <p>Light Mode</p>
-              </button>
-              <button>
-                <p>Dark Mode</p>
-              </button>
-            </tr>
-          </table>
-          <hr />
-          <button mat-menu-item>
-            <mat-icon>logout</mat-icon>
-            <span>LogOut</span>
-          </button>
-        </mat-menu>
       </button>
+      <mat-menu #menu="matMenu">
+        <mat-card class="inner-name">
+          <p>JW</p>
+        </mat-card>
+        <h3 style="margin-left: 50px; margin-top: -30px">James Wachira</h3>
+        <hr />
+        <button mat-menu-item>
+          <mat-icon>person</mat-icon>
+          <span>Profile</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
+        </button>
+        <button mat-menu-item>
+          <button mat-button>Menu</button>
+          <mat-icon>key</mat-icon>
+          <span>Change Password</span>
+        </button>
+        <hr />
+        <button mat-menu-item>Mode</button>
+        <table>
+          <tr>
+            <button>
+              <p>Light Mode</p>
+            </button>
+            <button>
+              <p>Dark Mode</p>
+            </button>
+          </tr>
+        </table>
+        <hr />
+        <button mat-menu-item>
+          <mat-icon>logout</mat-icon>
+          <span>LogOut</span>
+        </button>
+      </mat-menu>
     </mat-card>
   </mat-card>
   <mat-card class="card">
     <div class="stages" style="margin-left: 480px">
-      <div fxLayout="row" fxLayoutAlign="space-evenly start">
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-evenly center"
+        style="margin-top: 10px"
+      >
         <h5><u class="dotted"> Stages</u><br />All</h5>
-        <h5><u class="dotted">Task</u><br />Active</h5>
+        <h5><u class="dotted">Tasks:</u><br />Active</h5>
         <h5>
-          <u class="dotted">View</u><br />
+          <u class="dotted">View:</u><br />
           <button
             mat-button
             [matMenuTriggerFor]="items"
@@ -72,7 +74,7 @@
           </button>
           <mat-menu #items="matMenu">
             <button mat-menu-item>Start Date</button>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="margin-left: 2%">
               <mat-label>This Week</mat-label>
               <mat-select>
                 <mat-select-trigger>
@@ -86,19 +88,18 @@
                   </span>
                 </mat-select-trigger>
                 <mat-option
-                  *ngFor="let topping of toppingList"
+                  *ngFor="let topping of toppingsList"
                   [value]="topping"
                   >{{ topping }}</mat-option
                 >
               </mat-select>
             </mat-form-field>
-
             <button mat-menu-item>Due Date</button>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="margin-left: 2%">
               <mat-label>This Week</mat-label>
               <mat-select>
                 <mat-select-trigger>
-                  {{topping.value?.[0] ||''}}
+                  {{topping.value?.[0] || ''}}
                   <span
                     *ngIf="(topping.value?.length || 0) > 1"
                     class="example-additional-selection"
@@ -115,10 +116,26 @@
               </mat-select>
             </mat-form-field>
             <div class="btn1">
-              <button mat-button color="primary">Apply</button>
+              <button
+                mat-button
+                color="primary"
+                style="border: 1px solid black; margin-left: 5px"
+              >
+                Apply
+              </button>
             </div>
             <div class="button">
-              <button mat-button color="primary">Cancel</button>
+              <button
+                mat-button
+                color="primary"
+                style="
+                  margin-left: 95px;
+                  margin-top: -35%;
+                  border: 1px solid black;
+                "
+              >
+                Cancel
+              </button>
             </div>
           </mat-menu>
         </h5>
@@ -126,7 +143,7 @@
     </div>
     <mat-form-field
       appearance="fill"
-      style="width: 140px; margin-left: 25px; margin-top: -50px"
+      style="width: 140px; margin-left: 25px; margin-top: -60px"
     >
       <mat-select [(value)]="selected">
         <mat-option value="option2">
@@ -135,7 +152,6 @@
         </mat-option>
         <mat-option value="option3">
           <mat-icon>view_module</mat-icon>
-
           <span>TableView</span>
         </mat-option>
       </mat-select>
@@ -149,17 +165,44 @@
           matSuffix
           mat-icon-button
           aria-label="Clear"
-          (click)="value = ''"
+          (click)="value = 'Clear Me'"
         >
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
     </div>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu1"
+      style="margin-left: 990px; margin-top: -8%"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu1="matMenu">
+      <button mat-menu-item>
+        <mat-icon>save_alt</mat-icon>
+        <span>Generate reports for Tasks</span>
+      </button>
+      <button mat-menu-item enabled>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Import CSV</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>visibility</mat-icon>
+        <span>Show Fields</span>
+      </button>
+    </mat-menu>
   </mat-card>
-  <div fxLayout="row" fxLayoutAlign="space-evenly start" style="padding: 2%">
-    <h3 style="margin-left: -5%; font-size: small">Backlog</h3>
+
+  <div fxLayout="row">
+    <h3 style="margin-left: 90px; margin-top: 22px; font-weight: bold">
+      Backlog
+    </h3>
     <span>
-      <div class="example-button-container">
+      <div
+        class="example-button-container1"
+        style="margin-left: 5px; margin-top: 20px"
+      >
         <button
           mat-mini-fab
           color="primary"
@@ -169,21 +212,31 @@
         </button>
       </div>
     </span>
-    <h4 style="margin-left: 7%; font-size: small">Inprogress</h4>
+    <h4 style="margin-left: 300px; margin-top: 20px; font-weight: bold">
+      Inprogress
+    </h4>
     <span>
-      <div class="example-button-container">
+      <div
+        class="example-button-container2"
+        style="margin-left: -85%; margin-top: 15px"
+      >
         <button
           mat-mini-fab
           color="primary"
-          style="background-color: rgb(0, 128, 0)"
+          style="background-color: rgb(0, 128, 0); margin-left: 280px"
         >
           <h3 id="g">{{ inprogress_count }}</h3>
         </button>
       </div>
     </span>
-    <h5 style="margin-left: 15%; font-size: small">Complete</h5>
+    <h4 style="margin-left: -50px; margin-top: 20px; font-weight: bold">
+      Complete
+    </h4>
     <span>
-      <div class="example-button-container">
+      <div
+        class="example-button-container3"
+        style="margin-top: 10px; margin-left: 5px"
+      >
         <button
           mat-mini-fab
           color="primary"
@@ -196,32 +249,35 @@
   </div>
 
   <div class="task">
-
-    <button class="tasks"(click)="open_task_form()"
-    class="progress" style="height: 30px; margin-top: -20px;width: 150px;"
-    ><span style="margin-left: 50px; ">Add Task</span><span>  <mat-icon style="margin-left: -140px;margin-top: -2px;">add</mat-icon> 
-    </span>
-
-  </button>
-
+    <button
+      class="tasks"
+      (click)="open_task_form()"
+      class="progress"
+      style="height: 30px; width: 150px; margin-left: 20px; margin-top: 10px"
+    >
+      <span style="margin-left: -10px">Add Task</span>
+      <div class="add">
+        <mat-icon style="margin-left: -70%; margin-top: -3%">add</mat-icon>
+      </div>
+    </button>
   </div>
 
-   <div cdkDropListGroup>
+  <div cdkDropListGroup>
     <div
       [ngStyle]="{ 'background-color': bgColor }"
       (mouseenter)="onMouseEnter()"
       (mouseleave)="onMouseLeave()"
       class="article"
     >
-    <button style="margin-top: 25px;margin-left: 200px;"
-
+      <button
+        style="margin-top: 25px; margin-left: 200px"
         mat-icon-button
-        [matMenuTriggerFor]="menu1"
-         >
-        <mat-icon >more_vert</mat-icon>
+        [matMenuTriggerFor]="menu4"
+      >
+        <mat-icon>more_vert</mat-icon>
       </button>
-      <mat-menu #menu1="matMenu">
-        <button mat-menu-item style="width: 200px;height: 4vh;">
+      <mat-menu #menu4="matMenu">
+        <button mat-menu-item style="width: 200px; height: 4vh">
           <mat-icon>visibility</mat-icon>
           <span
             (click)="open_task_dialog()"
@@ -260,41 +316,43 @@
       </div>
     </div>
     <div
-    class="article1"
-    [ngStyle]="{'background-color':hover ?'red':''}"
-    (mouseenter)="hover= true"
-    (mouseleave)="hover= false">
-    <button style="margin-top: 25px;margin-left: 190px;"
-    mat-icon-button
-    [matMenuTriggerFor]="menu1"
-  >
-    <mat-icon >more_vert</mat-icon>
-  </button>
-  <mat-menu #menu1="matMenu">
-    <button mat-menu-item>
-      <mat-icon>visibility</mat-icon>
-      <span
-        (click)="open_task_dialog()"
-        class="progress"
-        style="font-size: 15px"
-        >View Task</span
+      class="article1"
+      [ngStyle]="{ 'background-color': hover ? 'red' : '' }"
+      (mouseenter)="hover = true"
+      (mouseleave)="hover = false"
+    >
+      <button
+        style="margin-top: 25px; margin-left: 190px"
+        mat-icon-button
+        [matMenuTriggerFor]="menu2"
       >
-    </button>
-    <button mat-menu-item ena>
-      <mat-icon>delete</mat-icon>
-      <span>Delete</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>share</mat-icon>
-      <span>Share</span>
-    </button>
-    <button mat-menu-item>
-      <span>Move</span>
-    </button>
-    <button mat-menu-item>
-      <span>Archive</span>
-    </button>
-  </mat-menu>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu2="matMenu">
+        <button mat-menu-item>
+          <mat-icon>visibility</mat-icon>
+          <span
+            (click)="open_task_dialog()"
+            class="progress"
+            style="font-size: 15px"
+            >View Task</span
+          >
+        </button>
+        <button mat-menu-item ena>
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>share</mat-icon>
+          <span>Share</span>
+        </button>
+        <button mat-menu-item>
+          <span>Move</span>
+        </button>
+        <button mat-menu-item>
+          <span>Archive</span>
+        </button>
+      </mat-menu>
       <div class="example-container">
         <div
           cdkDropList
@@ -304,50 +362,48 @@
         >
           <div class="example-box" *ngFor="let item of inprogress" cdkDrag>
             {{ item }}
-
           </div>
         </div>
       </div>
     </div>
-  <div class="article2"
-    
-    [ngStyle]="{'background-color':hovering ?'black':''}"
-    (mouseenter)="hovering= true"
-    (mouseleave)="hovering= false"
-    
-  >
-    
-  <button style="margin-top: 25px;margin-left: 200px;"
-  mat-icon-button
-    [matMenuTriggerFor]="menu1"
-  >
-    <mat-icon >more_vert</mat-icon>
-  </button>
-  <mat-menu #menu1="matMenu">
-    <button mat-menu-item>
-      <mat-icon >visibility</mat-icon>
-      <span
-        (click)="open_task_dialog()"
-        class="progress"
-        style="font-size: 15px"
-        >View Task</span
+    <div
+      class="article2"
+      [ngStyle]="{ 'background-color': hovering ? 'black' : '' }"
+      (mouseenter)="hovering = true"
+      (mouseleave)="hovering = false"
+    >
+      <button
+        style="margin-top: 25px; margin-left: 200px"
+        mat-icon-button
+        [matMenuTriggerFor]="menu3"
       >
-    </button>
-    <button mat-menu-item ena>
-      <mat-icon>delete</mat-icon>
-      <span>Delete</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>share</mat-icon>
-      <span>Share</span>
-    </button>
-    <button mat-menu-item>
-      <span>Move</span>
-    </button>
-    <button mat-menu-item>
-      <span>Archive</span>
-    </button>
-  </mat-menu>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu3="matMenu">
+        <button mat-menu-item>
+          <mat-icon>visibility</mat-icon>
+          <span
+            (click)="open_task_dialog()"
+            class="progress"
+            style="font-size: 15px"
+            >View Task</span
+          >
+        </button>
+        <button mat-menu-item ena>
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>share</mat-icon>
+          <span>Share</span>
+        </button>
+        <button mat-menu-item>
+          <span>Move</span>
+        </button>
+        <button mat-menu-item>
+          <span>Archive</span>
+        </button>
+      </mat-menu>
       <div class="example1-container">
         <div
           cdkDropList
@@ -355,20 +411,11 @@
           class="example-list"
           (cdkDropListDropped)="drop($event)"
         >
-<div class="example-box" *ngFor="let item of complete" cdkDrag>
+          <div class="example-box" *ngFor="let item of complete" cdkDrag>
             {{ item }}
-
-   </div>
+          </div>
         </div>
       </div>
     </div>
-  </div> 
-
-
-
-
+  </div>
 </mat-card>
-
-
-
-

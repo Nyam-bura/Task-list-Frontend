@@ -1,7 +1,6 @@
 .container img {
-    width: 1105px;
-    height: 700px;
-    margin-left: -20px;
+    width: 100%;
+    height: 750px;
 }
 
 .container h2 {
@@ -12,24 +11,22 @@
     color: white;
     font-weight: lighter;
 }
-
 .all {
-    width: 45%;
+    width: 40%;
     margin-top: 10%;
-    margin-left: 5%;
+    margin-left: 10%;
     height: 45vh;
-
 }
 .project{
-    width: 1000px;
+    width: 1040px;
     margin-left: -3%;
     margin-top: 65px;
-    height: 50px;
+    height: 55px;
 }
 
 .card2 {
-    margin-top: -26%;
-    width: 44%;
+    margin-top: -31%;
+    width: 40%;
     margin-left: 55%;
     height: 45vh;
 }

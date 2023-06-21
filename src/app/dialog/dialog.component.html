@@ -9,7 +9,7 @@
     <mat-divider></mat-divider>
   </div>
   <mat-list style="margin-left: 18px">
-    <h5 style="font-weight: bold">Design ></h5>
+    <h5 style="font-weight: bold">Design</h5>
     <span
       ><p style="margin-top: -34px; margin-left: 70px">List of task</p></span
     >
@@ -17,15 +17,15 @@
     <h4 style="color: gray">Description</h4>
   </mat-list>
   <mat-grid-list cols="2" rowHeight="5:1" style="width: 400px">
-    <mat-grid-tile style="margin-left: 12px"
-      ><p style="margin-left: -100px; margin-top: 20px">
-        Start/Due
-      </p></mat-grid-tile
+    <mat-grid-tile style="margin-left: 12px">
+
+      <p style="margin-left: -100px; margin-top: 20px">Start/Due</p>
+      </mat-grid-tile
     >
     <mat-grid-tile
       >
         <label for="birthday"></label>
-        <input type="date">
+        <input type="date" name='date'>
        
 
               <form class="example">
@@ -34,7 +34,7 @@
             style="margin-left: -520px"
           >
             <mat-label></mat-label>
-            <input matInput #message maxlength="256" />
+            <input matInput #message maxlength="256"/>
           </mat-form-field>
         </form>
   </mat-grid-tile>
@@ -46,11 +46,7 @@
   <form class="example-form3">
         <mat-form-field class="example-full-width1" appearance="fill">
           <mat-label>Names</mat-label>
-          <input type="text"
-                 placeholder="Pick one"
-                 aria-label="Names"
-                 matInput [formControl]="myControl"
-                 [matAutocomplete]="auto">
+          <input type="text" placeholder="Pick one" aria-label="Names" matInput [formControl]="myControl" [matAutocomplete]="auto">
           <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
             <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
               {{option}}
@@ -60,15 +56,14 @@
       </form>
       
 <div class="grid">
-      <mat-grid-tile ><p style="margin-left: -110px; margin-top: 20px;">Progress </p></mat-grid-tile
-    > 
+      <mat-grid-tile ><p style="margin-left: -110px; margin-top: 20px;">Progress </p></mat-grid-tile> 
+      
   </div>
   <mat-form-field appearance="fill" style="margin-left: 210px;margin-top:60px;width: 190px;">
     <mat-label>Choose an option</mat-label>
     <mat-select [disabled]="disableSelect.value">
       <mat-option value="option1">Inprogress</mat-option>
       <mat-option value="option3">Complete</mat-option>
-
       <mat-option value="option3">Done</mat-option>
     </mat-select>
   </mat-form-field>
@@ -95,7 +90,7 @@
       
       </div>
   </form>
-  <div class="button">
+  <div class="button" >
     <button mat-button color="primary">Submit</button>
   </div>
   </mat-grid-list>
