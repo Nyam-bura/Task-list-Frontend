@@ -1,0 +1,10 @@
+
+  table, th, td {
+    border:1px solid black;
+    width: 200px;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 18px;
+  }

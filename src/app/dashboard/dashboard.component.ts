@@ -125,12 +125,14 @@ export class DashboardComponent implements OnInit {
   onStateContainerLeave(event: Event) {
     console.log(event);
   }
-  onItemDropped(event: Event) {
-    console.log(event);
+  onItemDropped($event: Event) {
+    console.log('dropped successfully');
   }
 
   //
-  dragStartHandler($event: Event) {}
+  dragStartHandler($event: Event) {
+    console.log('Card dragged')
+  }
   dragEndHandler($event: Event) {
     console.log('Landed');
   }
@@ -146,10 +148,8 @@ export class DashboardComponent implements OnInit {
       this._snackBar.open('Card dragged successfully!', 'OK', {
         duration: 3000,
       });
-      //       const message= `Moved ${event.item.data} to ${event.container.id}`;
-      //   this._snackBar.open(message, 'Dismiss', { duration: 9000 });
-      // this.toastr.success(message);
-    } else {
+    } 
+    else {
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
@@ -174,11 +174,6 @@ export class DashboardComponent implements OnInit {
     'Sixteenth Task Date:"17/03/2023"Title Assigned:Abdulmanan Ahmed Status: Inprogresss'
   
   ]
-  // inprogress = [
-  //   'Fourteenth Task Date:"17/03/2023"Title Assigned:Abdulmanan Ahmed Status: Inprogress',
-  //   'Fifteenth Task Date:"17/03/2023"Title Assigned:Abdulmanan Ahmed Status: Inprogress',
-  //   'Sixteenth Task Date:"17/03/2023"Title Assigned:Abdulmanan Ahmed Status: Inprogress',
-  // ];
   complete = [
     'Seventeenth Task Date:"17/03/2023"Title Assigned:Abdulmanan Ahmed Status: Inprogress',
     'Eighteenth Task Date:"17/03/2023"Title Assigned:Abdulmanan Ahmed Status: Inprogress',

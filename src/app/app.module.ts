@@ -30,6 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
+
 import { ToastrService } from 'ngx-toastr';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -62,6 +64,7 @@ import { ApiListComponent } from './api-list/api-list.component';
     HttpClientModule,
     MatInputModule,
     FormsModule,
+    MatTableModule,
     MatDialogModule,
     DragDropModule,
     MatGridListModule,

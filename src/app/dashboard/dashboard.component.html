@@ -1,20 +1,14 @@
 <mat-card class="cont">
   <mat-card class="list">
     <div class="design" style="margin-top: 20px">
-      <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+      <div fxLayout="row" fxLayoutAlign="space-evenly center">
         <h4 style="margin-left: -250px">Design</h4>
         <h4 style="color: blue; margin-top: -1px">Task List System</h4>
         <mat-icon style="margin-top: -1%">notifications</mat-icon>
       </div>
     </div>
     <mat-card class="name">
-      <button
-        mat-button
-        [matMenuTriggerFor]="menu"
-        style="margin-left: -15px; color: white"
-      >
-        JW
-      </button>
+      <button mat-button style="margin-left: -15px; color: white">JW</button>
       <mat-menu #menu="matMenu">
         <mat-card class="inner-name">
           <p>JW</p>
@@ -165,17 +159,13 @@
           matSuffix
           mat-icon-button
           aria-label="Clear"
-          (click)="value = 'Clear Me'"
+          (click)="value = 'Clear me'"
         >
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
     </div>
-    <button
-      mat-icon-button
-      [matMenuTriggerFor]="menu1"
-      style="margin-left: 990px; margin-top: -8%"
-    >
+    <button mat-icon-button="menu1" style="margin-left: 990px; margin-top: -8%">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu1="matMenu">
@@ -331,12 +321,7 @@
       <mat-menu #menu2="matMenu">
         <button mat-menu-item>
           <mat-icon>visibility</mat-icon>
-          <span
-            (click)="open_task_dialog()"
-            class="progress"
-            style="font-size: 15px"
-            >View Task</span
-          >
+          <span (click)="open_task_dialog()"class="progress" style="font-size: 15px">View Task</span>
         </button>
         <button mat-menu-item ena>
           <mat-icon>delete</mat-icon>
@@ -358,8 +343,7 @@
           cdkDropList
           [cdkDropListData]="inprogress"
           class="example-list"
-          (cdkDropListDropped)="drop($event)"
-        >
+          (cdkDropListDropped)="drop($event)">
           <div class="example-box" *ngFor="let item of inprogress" cdkDrag>
             {{ item }}
           </div>

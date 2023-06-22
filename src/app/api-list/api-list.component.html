@@ -1,4 +1,24 @@
-<div *ngFor="let api of apiList">
-    <h3>Tasks<span>{{api.title}}</span></h3>
-    <h3>Assigned<span>{{api.assigned}}</span></h3>
-</div>
+<ul *ngFor="let task of task_array">
+ 
+    
+      
+
+<table style="width:100%">
+    <tr>
+      <th>Assigned_to_name</th>
+      <th>Assigned_by_name</th>
+      <th>Description</th>
+      <th>Date</th>
+
+    </tr>
+    <tr>
+      <td>{{task.assigned_by_name}}</td>
+      <td>{{task.assigned_to_name}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.creation_date}}</td>
+
+    </tr>
+   
+  </table>
+  
+</ul>
